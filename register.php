@@ -13,12 +13,12 @@ if ($_SESSION['user']) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Авторизация и регистрации</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <!-- форма реги -->
-    <form action="vendor/signup.php" method="post" enctype="multipart/form-data">
+    <form>
         <label>ФИО</label>
         <input type="text" name="full_name" id="" placeholder="Введите ФИО">
         <label>Логин</label>
@@ -31,17 +31,15 @@ if ($_SESSION['user']) {
         <input type="password" name="password" id="" placeholder="Введите пароль">
         <label>Подтвердите пароль</label>
         <input type="password" name="password_confirm" id="" placeholder="Подтвердите пароль">
-        <button type="submit">Регистрация</button>
+        <button type="submit" class="register-btn">Регистрация</button>
         <p>
             У вас уже есть аккаунт? |<a href="login.php">Войти</a>
         </p>
+        <p class="msg none">Lorem ipsum dolor sit amet.</p>
 
-        <?php
-        if ($_SESSION['message']) {
-            echo '<p class="msg">' . $_SESSION['message'] . '</p>';
-        }
-        unset($_SESSION['message']);
-        ?>
+        <script src="assets/js/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
 
     </form>
 </body>

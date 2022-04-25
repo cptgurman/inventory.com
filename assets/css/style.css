@@ -44,6 +44,14 @@ p {
     text-align: center;
 }
 
+.none {
+    display: none;
+}
+
 .logout {
     color: #b7625c;
+}
+
+.error {
+    border-bottom: 2px solid #b7625c;
 }

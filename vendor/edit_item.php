@@ -1,11 +1,10 @@
-
 <?php
-
 session_start();
 require_once 'connect.php';
 
 $item_name = $_POST['item_name'];
 $item_code = $_POST['item_code'];
+$item_id = $_POST['item_id'];
 
 $error_fields = [];
 
@@ -30,23 +29,9 @@ if (!empty($error_fields)) {
     die();
 }
 
-//Проверка существующего кода оборудования
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-$check_item_code = mysqli_query($connect, "SELECT * FROM `items` WHERE `item_name` = '$item_name' AND `code` = '$item_code'");
 
-if (mysqli_num_rows($check_item_code) > 0) {
-    $response = [
-        "status" => false,
-        "message" => "Такой код оборудования уже существует",
-        "type" => 1,
-        "fields" => ['item_code']
-    ];
-
-    echo json_encode($response);
-    die();
-}
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-mysqli_query($connect, "INSERT INTO `items` (`id`, `item_name`, `code`, `employee_id`) VALUES (NULL, '$item_name', '$item_code', NULL)");
+mysqli_query($connect, "UPDATE items SET item_name='$item_name', code='$item_code' WHERE id='$item_id'");
 $response = [
     "status" => true,
     "message" => "Оборудование добавлено!",

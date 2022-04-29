@@ -40,7 +40,7 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
             <li><a href="profile.php" class="nav-link px-2 link-dark">Главная</a></li>
             <li><a href="inventory.php" class="nav-link px-2 link-secondary">Перечень оборудования</a></li>
             <li><a href="employees.php" class="nav-link px-2 link-dark">Перечень сотрудников</a></li>
-            <li><a href="table.html" class="nav-link px-2 link-dark">Использование оборудования</a></li>
+            <li><a href="usage.php" class="nav-link px-2 link-dark">Использование оборудования</a></li>
         </ul>
 
         <div class="col-md-3 text-end p-2">

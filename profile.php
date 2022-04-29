@@ -98,7 +98,7 @@ if (!$_SESSION['user']) {
                                 <div class="d-flex justify-content-center">
                                     <div class="d-flex justify-content-center">
 
-                                        <a class="btn btn-primary" href="table.html" role="button">Список</a>
+                                        <a class="btn btn-primary" href="usage.php" role="button">Список</a>
 
                                     </div>
                                 </div>

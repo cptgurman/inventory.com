@@ -59,7 +59,6 @@ $('.saveEdit').click(function (e) {
     e.preventDefault();
 
     //удаляем все красные линии
-    $(`input`).removeClass('error');
 
     let item_name = $('.editName').val();
     let item_code = $('.editCode').val();

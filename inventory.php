@@ -68,7 +68,7 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
                                 <td class='table-item' name='item-name'><a href="#"><?php echo $row['item_name']; ?></a></td>
                                 <td class='table-item-code' name='item-code'><?php echo $row['code']; ?></td>
                                 <td>
-                                    <button type="button" class="btn btn-primary"><i class="bi bi-person-fill"></i></i></button>
+                                    <a href="usage.php?name=-1&item=<?php echo $row['id']; ?>&status=0" class="btn btn-primary" role="button">Сотрудники</a></i>
                                     <button type="button" class="btn btn-success editbtn" data-bs-toggle="modal" data-bs-target="#editItem"><i class="bi bi-pencil-square"></i></button>
                                     <button type="button" class="btn btn-danger deletebtn" data-bs-toggle="modal" data-bs-target="#deleteItem"><i class=" bi bi-x-circle-fill"></i></button>
                                 </td>

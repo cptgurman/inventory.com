@@ -59,30 +59,34 @@ $employee = $employees->fetchAll(PDO::FETCH_ASSOC);
                 оборудование</button>
         </div>
         <div class="container d-inline-flex">
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select class="form-select m-1 item-filter" aria-label="Default select example">
+                <option selected>Оборудование</option>
+                <?php foreach ($inventory as $row) : ?>
+                    <option value="<?php echo $row['id']; ?>"><?php echo $row['item_name']; ?></option>
+                <?php endforeach; ?>
             </select>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <p></p>
+            <select class="form-select m-1 employee-filter" aria-label="Default select example">
+                <option selected>Сотрудник</option>
+                <?php foreach ($employee as $row) : ?>
+                    <option value="<?php echo $row['id']; ?>"><?php echo $row['full_name']; ?></option>
+                <?php endforeach; ?>
             </select>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
+            <p></p>
+            <div class="form-check m-1">
+                <input class="form-check-input" id="check_status" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    На складе
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary filter-btn m-1 ">Применить фильтр</button>
         </div>
         <div class="row">
             <div class="col-12">
                 <table class="table thetable" id="table">
                     <thead>
                         <tr>
+                            <th scope="col">История выдачи</th>
                             <th scope="col">Инвентарный номер</th>
                             <th scope="col">Наименование оборудования</th>
                             <th scope="col">Сотрудник</th>
@@ -95,6 +99,10 @@ $employee = $employees->fetchAll(PDO::FETCH_ASSOC);
                     </tbody>
                 </table>
             </div>
+        </div>
+        <div class="container m-5">
+            <div class="b-example-divider"></div>
+            <button type="button" class="btn btn-success excel">Скачать отчет</button>
         </div>
     </div>
 
@@ -128,6 +136,35 @@ $employee = $employees->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <button type="submit" class="btn btn-primary usage-add-btn">Выдать</button>
                     </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Логи оборудования -->
+    <div class="modal fade" id="logsUsage" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">История выдачи оборудования</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table class="table logstable" id="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Сотрудник</th>
+                                <th scope="col">Дата выдачи</th>
+                                <th scope="col">Дата возврата</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- сюда jquery вставит -->
+                        </tbody>
+                    </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Закрыть</button>

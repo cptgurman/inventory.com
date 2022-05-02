@@ -63,7 +63,6 @@ $(".usage-add-btn").click(function (e) {
                         '</td><td>' + data[i].full_name + '</td><td>' + data[i].status + '</td><td>' + data[i].date_of_issue + '</td></tr>')
                 }
             }
-            return data
         }
     });
 });
@@ -85,7 +84,6 @@ $(document).on("click", "#back-btn", function () {
             if (data.status) {
                 document.location.href = '/usage.php';
             }
-            return data
         }
     });
 });
@@ -119,7 +117,6 @@ $(".filter-btn").click(function (e) {
                         '</td><td>' + data[i].full_name + '</td><td>' + data[i].status + '</td><td>' + data[i].date_of_issue + '</td></tr>')
                 }
             }
-            return data
         }
     });
 });
@@ -148,7 +145,6 @@ $(document).on("click", ".logs-btn", function () {
     })
     console.log(item_id);
     $('#logsUsage').modal('show');
-    return data
 })
 
 
@@ -163,7 +159,7 @@ $(".excel").click(function (e) {
         },
 
         success(data) {
-
+            console.log(data)
             console.log('отчет создан');
         }
     });

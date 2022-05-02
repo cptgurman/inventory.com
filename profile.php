@@ -30,7 +30,7 @@ if (!$_SESSION['user']) {
 
         <div class="col-md-3 text-end m-3">
             <a class="btn btn-danger" role="button" href="vendor/logout.php" class="logout">Выйти</a>
-            <img src="<?= $_SESSION['user']['avatar'] ?>" width="200" alt="">
+            <img src="<?= $_SESSION['user']['avatar'] ?>" width="100" alt="">
             <h2 style="margin: 10px 0;"><?= $_SESSION['user']['full_name'] ?></h2>
             <a href="#"><?= $_SESSION['user']['email'] ?></a>
         </div>

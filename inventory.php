@@ -98,6 +98,7 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Код</label>
+                            <p>ИЛ000001</p>
                             <input type="text" class="form-control editCode" id="exampleInputText1">
                         </div>
                         <button type="submit" class="btn btn-primary saveEdit">Сохранить</button>
@@ -150,7 +151,7 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputCode" class="form-label">Код</label>
-                            <input type="input" class="form-control" id="exampleInputText1" name="item_code">
+                            <input type="input" class="form-control" id="exampleInputText1" name="item_code" placeholder="ИЛ000001">
                         </div>
                         <button type="submit" class="btn btn-primary item-add-btn">Добавить</button>
                     </form>

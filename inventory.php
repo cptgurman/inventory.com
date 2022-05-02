@@ -44,7 +44,7 @@ $list = $sth->fetchAll(PDO::FETCH_ASSOC);
         </ul>
 
         <div class="col-md-3 text-end p-2">
-            <a>Герман Креханов</a>
+            <a><?php echo $_SESSION['user']["full_name"]; ?></a>
             <a class="btn btn-primary" href="vendor/logout.php" role="button">Выйти</a>
         </div>
     </header>

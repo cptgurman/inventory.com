@@ -46,7 +46,7 @@ if (mysqli_num_rows($check_item_code) > 0) {
     die();
 }
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-mysqli_query($connect, "INSERT INTO `items` (`id`, `item_name`, `code`, `employee_id`) VALUES (NULL, '$item_name', '$item_code', NULL)");
+mysqli_query($connect, "INSERT INTO `items` (`id`, `item_name`, `code`) VALUES (NULL, '$item_name', '$item_code')");
 $response = [
     "status" => true,
     "message" => "Оборудование добавлено!",
